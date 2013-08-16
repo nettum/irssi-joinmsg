@@ -1,7 +1,7 @@
 # irssi-joinmsg
 
 Add msgs to people that is offline/not in channel. 
-Msgs will be displayed in when the user joins the channel again
+Msgs will be displayed in channel the next time user joins the channel.
 
 
 ## Requirements
