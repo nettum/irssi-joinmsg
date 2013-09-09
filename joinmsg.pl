@@ -44,7 +44,6 @@ sub get_msgs_for_nick {
 	my $channel = $_[1];
 	my $tmpfile_created = false;
 	my @msgs = ();
-	print 'chan' . $channel;
 
 	if (open(my $readdata, '<', $msgfile)) {
 		open(my $writedata, '>', $msgfile_tmp);
@@ -52,9 +51,7 @@ sub get_msgs_for_nick {
         while (my $line = <$readdata>) {
 			chomp $line;
 			my @fields = split " F_SEP " , $line;
-			foreach $field (@fields) {
-				print 'field is: ' . $field;
-			}
+			
 			if ($fields[0] =~ /$nick/i && $fields[4] =~ /$channel/i) {
 				push(@msgs, '"' . $fields[1] . '" - added by ' . $fields[3] . ', ' . $fields[2])
 			} else {
