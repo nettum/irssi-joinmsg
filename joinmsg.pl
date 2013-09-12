@@ -40,7 +40,7 @@ sub do_msg_on_join {
 }
 
 sub get_msgs_for_nick {
-	my $nick = $_[0];
+	my $nick = quotemeta($_[0]);
 	my $channel = $_[1];
 	my $tmpfile_created = false;
 	my @msgs = ();
